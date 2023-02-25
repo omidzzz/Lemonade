@@ -17,6 +17,7 @@
     "express": "^4.18.2",
     "formik": "^2.2.9",
     "js-file-download": "^0.4.12",
+    "lemonade": "file:..",
     "mongodb": "^5.0.1",
     "mongoose": "^6.9.2",
     "nodemon": "^2.0.20",
