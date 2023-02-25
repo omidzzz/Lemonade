@@ -1,0 +1,144 @@
+@media (max-width:768px){
+    .bodyContainer {
+        height: auto !important;
+    }
+
+    .leftSection,
+    .rightSection {
+        width: auto !important;
+        float: none !important;
+        margin-bottom: 4vh !important;
+
+    }
+    .musicP img {
+        max-width: 10vw !important;
+    }
+}
+
+@media (min-width: 768px) and (max-width:1140px) {
+
+
+    .leftSection {
+        width: 40vw !important;
+    }
+
+    .rightSection {
+        width: 40vw !important;
+    }
+}
+
+body {
+    background-color: rgb(25%, 88%, 99%) !important;
+}
+
+.bodyContainer {
+    height: 92vh;
+    margin: 3vh 3vw 0;
+    background-color: transparent;
+    border: 0.35vw solid rgba(255, 223, 61, 0.673);
+    border-radius: 20px;
+    position: relative;
+}
+
+.topBar {
+    height: 15vh;
+    background-color: rgba(88, 88, 88, 0.8);
+    margin: 2vh 2vw 0;
+    border-radius: 10px;
+}
+
+.rightSection {
+    width: 30vw;
+    background-color: rgba(88, 88, 88, 0.5);
+    margin: 2vh 2vw;
+    border-radius: 10px;
+    position: relative;
+    float: right;
+}
+
+.lastT{
+    font-family: 'Permanent Marker', cursive;
+}
+
+.leftSection {
+    width: 30vw;
+    background-color: rgba(88, 88, 88, 0.5);
+    margin: 2vh 2vw;
+    border-radius: 10px;
+    position: relative;
+    float: left;
+}
+
+.musicP{
+    
+    height: auto;
+    background-color: rgb(252, 197, 47, 0.9);
+    border-radius: 10px;
+    width: 80%;
+    position: relative;
+    margin-left: 10%;
+}
+
+.postMarg{
+    margin-left: 5%;;
+}
+
+.postT{
+    font-family: 'Mynerve', cursive;
+    font-weight: 700;
+}
+
+
+.logoC {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.wounded {
+    z-index: -1;
+    width: 200px;
+    height: 200px;
+    border-radius: 15% 50% !important;
+    background-color: #FFCA2C;
+    position: fixed;
+    top:44.5vh;
+    transform: translate(-50%, -50%);
+    box-shadow: 10px 10px 5px #FCC52F, 10px 10px 5px #FCC52F inset;
+    animation: first 10s linear 0s infinite;
+}
+
+@keyframes first {
+    0% {
+        transform: rotate(0)
+    }
+
+    25% {
+        transform: rotate(90deg)
+    }
+
+    50% {
+        transform: rotate(180deg)
+    }
+
+    75% {
+        transform: rotate(270deg)
+    }
+
+    100% {
+        transform: rotate(360deg)
+    }
+}
+
+.rhombus {
+    z-index: -1;
+    width: 140px;
+    height: 140px;
+    background-color: #ffc926;
+    transform: rotate(45deg);
+    margin: 32px;
+    position: absolute;
+}
