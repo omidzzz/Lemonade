@@ -98,6 +98,10 @@ if(process.env.NODE_ENV === 'production'){
     })
 }
 
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static("build"));
+}
+
 const port = process.env.POST || 3001;
 app.listen(port);
 
