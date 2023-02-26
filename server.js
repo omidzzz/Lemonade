@@ -3,6 +3,9 @@ const app = express();
 require('dotenv').config();
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
+const Cors = require("cors");
+
+app.use(Cors());
 
 const xss = require('xss-clean')
 const mongoSanitize = require('express-mongo-sanitize');
@@ -16,6 +19,7 @@ mongoose.set('strictQuery', false);
 /* -------------------------------------------------------------------------- */
 mongoose.connect(mongoUri);
 //Parsing
+app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json())
 //Sanitize
 app.use(xss());
