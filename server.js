@@ -97,7 +97,6 @@ app.get('/api/last', async(req,res) => {
     // }
     const data = await axios(lastFmUri)
     res.json(data)
-    console.log(data);
 });
 
 //Port
