@@ -5,6 +5,7 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const Cors = require("cors");
 const fetch = (...args) => import('node-fetch').then(({default: fetch}) => fetch(...args));
+const rp = require('request-promise');
 
 
 app.use(Cors());
@@ -87,11 +88,20 @@ app.post('/api/addpost', (req, res) => {
 /*                                   Last.fm                                  */
 /* -------------------------------------------------------------------------- */
 
-app.get('/api/last', async(request,response) => {
+app.get('/api/last', (request,response) => {
     const lastFmUri= 'http://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=simplyeffedup&limit=10&api_key=f59084f6f83edbe693185eb0ec6b2272';
-    const fetch_response = await fetch(lastFmUri);
-    const json = await fetch_response.json();
-    response.json(json);
+    return rp({
+        uri: lastFmUri,
+        method: "GET",
+        qs: {
+          table: "recenttracks",
+          format: "json"
+        },
+        json: true
+      });
+    // const fetch_response = await fetch(lastFmUri);
+    // const json = await fetch_response.json();
+    // response.json(json);
 });
 
 //Port
