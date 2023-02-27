@@ -4,6 +4,8 @@ require('dotenv').config();
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const Cors = require("cors");
+const fetch = (...args) => import('node-fetch').then(({default: fetch}) => fetch(...args));
+
 
 app.use(Cors());
 
