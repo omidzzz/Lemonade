@@ -55,7 +55,7 @@ app.get('/api/last', async(request,response) => {
     const fetch_response = await fetch(lastFmUri);
     console.log(fetch_response)
     const json = await fetch_response.json();
-    response.json(json);
+    response.json(json);//hm
 });
 
 /* -------------------------------------------------------------------------- */
