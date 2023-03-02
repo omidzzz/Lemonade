@@ -3,6 +3,7 @@ const app = express();
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const fetch = (...args) => import('node-fetch').then(({default: fetch}) => fetch(...args));
+const cors = require('cors');
 
 const mongoUri = "mongodb+srv://Sinisteroid:XEplQ9B3i7TX97J9@sinisteroid0.8biscsu.mongodb.net/musicPostsDB?retryWrites=true&w=majority"
 const lastUri = 'http://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=simplyeffedup&limit=3&api_key=f59084f6f83edbe693185eb0ec6b2272&format=json'
@@ -13,6 +14,7 @@ mongoose.set('strictQuery', false);
 /* -------------------------------------------------------------------------- */
 mongoose.connect(mongoUri);
 app.use(bodyParser.json())
+app.use(cors())
 
 /* -------------------------------------------------------------------------- */
 /*                                   Schema                                   */
