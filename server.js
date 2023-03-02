@@ -53,9 +53,8 @@ app.get('/api/getposts', (req, res) => {
 app.get('/api/last', async(request,response) => {
     const lastFmUri= 'http://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=simplyeffedup&limit=10&api_key=f59084f6f83edbe693185eb0ec6b2272&format=json';
     const fetch_response = await fetch(lastFmUri);
-    console.log(fetch_response)
     const json = await fetch_response.json();
-    response.json(json);//hm
+    response.json(json);
 });
 
 /* -------------------------------------------------------------------------- */
